@@ -1,12 +1,20 @@
 // create new function getComputerChoice
 function getComputerChoice() {
-  const choices = ["rock", "paper", "scissor"];
+  const computerChoices = ["rock", "paper", "scissor"];
   // Randomly return one of the following string values: “rock”, “paper” or “scissors”.
-  return choices[Math.floor(Math.random() * choices.length)];
+  return computerChoices[Math.floor(Math.random() * computerChoices.length)];
 }
 // Create a new function named getHumanChoice.
-// Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
+function getHumanChoice() {
+  // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
+  const humanChoices = prompt("Input your choice: ");
+  return humanChoices;
+}
+
 // write variables to keep track of the players score named humanScore and computerScore in the global scope, Initialize those variables with the value of 0.
+let humanScore = 0;
+let computerScore = 0;
+
 // function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
 // Create a new function named playRound.
 // Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and computer choices as arguments.

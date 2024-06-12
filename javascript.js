@@ -1,16 +1,17 @@
-// create new function getComputerChoice
+// create getComputerChoice
 function getComputerChoice() {
   const computerChoice = ["rock", "paper", "scissor"];
-  // Randomly return one of the following string values: “rock”, “paper” or “scissors”.
+  // Randomly return “rock”, “paper” or “scissors”.
   return computerChoice[Math.floor(Math.random() * computerChoice.length)];
 }
-// Create a new function named getHumanChoice.
+// Create getHumanChoice.
 function getHumanChoice() {
-  // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-  const humanChoice = prompt("Input your choice (rock, paper, scissor): ");
-  if (humanChoice !== "/rock/i" || humanChoice !== "/paper/i" || humanChoice !== "/scissor/i") {
-    alert("input invalid");
-
+  // return one of the valid choices depending on what the user inputs.
+  let humanChoice = prompt("Input your choice (rock, paper, scissor): ");
+  humanChoice = humanChoice.toLowerCase();
+  if (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissor") {
+    alert("Invalid input");
+    humanChoice = prompt("Input your choice (rock, paper, scissor): ");
   }
   return humanChoice;
 }
@@ -26,15 +27,15 @@ function playRound(humanChoice, computerChoice) {
   // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
   // Increment the humanScore or computerScore variable based on the round winner.
 
-  if (humanChoice == "/rock/i" && computerChoice == "scissor") {
+  if (humanChoice == "rock" && computerChoice == "scissor") {
     //rock beat scissor
     console.log("You win! Rock beats Scissor");
     humanScore++;
-  } else if (humanChoice == "/scissor/i" && computerChoice == "paper") {
+  } else if (humanChoice == "scissor" && computerChoice == "paper") {
     //scissor beat paper
     console.log("You win! Scissor beats Paper");
     humanScore++;
-  } else if (humanChoice == "/paper/i" && computerChoice == "rock") {
+  } else if (humanChoice == "paper" && computerChoice == "rock") {
     //paper beat rock
     console.log("You win! Paper beats Rock");
     humanScore++;
